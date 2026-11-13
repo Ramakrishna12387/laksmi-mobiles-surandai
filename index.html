@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakshmi Mobiles | Surandai, Tenkasi - Best 5G Smartphones & Express Service</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 text-slate-950 text-xs md:text-sm font-bold py-2 px-4 text-center">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <span><i class="fa-solid fa-location-dot mr-1"></i> Main Road, Near Bus Stand, Surandai, Tenkasi - 627859</span>
+            <span class="hidden sm:inline">🎉 Grand Offer: Buy Any 5G Mobile & Get 5 Assured Gifts Free!</span>
+            <a href="tel:+919876543210" class="underline hover:text-red-800"><i class="fa-solid fa-phone mr-1"></i> +91 98765 43210</a>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <div onclick="navigateTo('home')" class="flex items-center gap-3 cursor-pointer group">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-slate-950 font-extrabold text-2xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition">
+                        LM
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-extrabold tracking-tight text-white flex items-center gap-1">
+                            LAKSHMI <span class="text-amber-400">MOBILES</span>
+                        </h1>
+                        <p class="text-[11px] text-slate-400 font-medium">SURANDAI • TENKASI (TN 76)</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-1">
+                    <button onclick="navigateTo('home')" class="nav-btn active-nav px-4 py-2 rounded-xl text-sm font-semibold transition" data-page="home">
+                        <i class="fa-solid fa-house mr-1.5"></i> Home
+                    </button>
+                    <button onclick="navigateTo('catalog')" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold transition" data-page="catalog">
+                        <i class="fa-solid fa-mobile-screen-button mr-1.5"></i> Mobiles & Catalog
+                    </button>
+                    <button onclick="navigateTo('service')" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold transition" data-page="service">
+                        <i class="fa-solid fa-screwdriver-wrench mr-1.5"></i> Express Service
+                    </button>
+                    <button onclick="navigateTo('exchange')" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold transition" data-page="exchange">
+                        <i class="fa-solid fa-repeat mr-1.5"></i> Exchange & EMI
+                    </button>
+                    <button onclick="navigateTo('contact')" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold transition" data-page="contact">
+                        <i class="fa-solid fa-map-location-dot mr-1.5"></i> Showroom
+                    </button>
+                    <button onclick="navigateTo('admin')" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold text-amber-400 border border-amber-500/30 bg-amber-500/10 ml-2 transition" data-page="admin">
+                        <i class="fa-solid fa-user-shield mr-1.5"></i> Owner Admin
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu Trigger -->
+                <div class="flex lg:hidden items-center gap-2">
+                    <button onclick="navigateTo('admin')" class="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold">
+                        Admin
+                    </button>
+                    <button onclick="toggleMobileMenu()" class="p-2.5 rounded-xl bg-slate-800 text-slate-200 hover:text-amber-400">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
+            <button onclick="navigateTo('home'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-xl bg-slate-800/60 font-semibold text-sm flex items-center gap-3"><i class="fa-solid fa-house text-amber-400 w-5"></i> Home</button>
+            <button onclick="navigateTo('catalog'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-xl bg-slate-800/60 font-semibold text-sm flex items-center gap-3"><i class="fa-solid fa-mobile-screen-button text-amber-400 w-5"></i> Mobiles & Accessories</button>
+            <button onclick="navigateTo('service'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-xl bg-slate-800/60 font-semibold text-sm flex items-center gap-3"><i class="fa-solid fa-screwdriver-wrench text-amber-400 w-5"></i> 30-Min Express Service</button>
+            <button onclick="navigateTo('exchange'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-xl bg-slate-800/60 font-semibold text-sm flex items-center gap-3"><i class="fa-solid fa-repeat text-amber-400 w-5"></i> Exchange & Bajaj EMI</button>
+            <button onclick="navigateTo('contact'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-xl bg-slate-800/60 font-semibold text-sm flex items-center gap-3"><i class="fa-solid fa-map-location-dot text-amber-400 w-5"></i> Contact Showroom</button>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         PAGE 1: HOME PAGE
+    =========================================== -->
+    <main id="page-home" class="page-section active-page">
+        <!-- Hero Banner -->
+        <section class="relative overflow-hidden py-14 lg:py-24 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                            <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                            Surandai & Tenkasi's #1 Trusted Showroom
+                        </div>
+                        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
+                            Upgrade to the Latest <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">5G Smartphones</span> Today!
+                        </h2>
+                        <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                            Zero Downpayment Bajaj Finserv EMI, Spot Old Phone Exchange, Original Accessories, mariyum 30-Nimida Express Mobile Service — ellame namma Surandai Lakshmi Mobiles-il!
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <button onclick="navigateTo('catalog')" class="px-7 py-4 rounded-2xl bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 font-extrabold text-sm shadow-lg shadow-amber-500/25 hover:scale-105 transition flex items-center gap-2">
+                                Explore Mobiles <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                            <button onclick="navigateTo('service')" class="px-7 py-4 rounded-2xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 transition flex items-center gap-2">
+                                <i class="fa-solid fa-wrench text-amber-400"></i> Book Mobile Repair
+                            </button>
+                        </div>
+
+                        <!-- Trust Metrics -->
+                        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80">
+                            <div>
+                                <h4 class="text-2xl font-extrabold text-amber-400">10,000+</h4>
+                                <p class="text-xs text-slate-400">Happy Customers in TN76</p>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-extrabold text-amber-400">0% EMI</h4>
+                                <p class="text-xs text-slate-400">Bajaj / TVS / IDFC / HDFC</p>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-extrabold text-amber-400">30 Mins</h4>
+                                <p class="text-xs text-slate-400">Express Display Service</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Hero Card -->
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700/70 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                            <div class="flex justify-between items-center mb-6">
+                                <span class="bg-red-500 text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase">Surandai Special Combo</span>
+                                <span class="text-amber-400 text-sm font-bold"><i class="fa-solid fa-gift mr-1"></i> 5 Free Gifts Included</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?auto=format&fit=crop&w=900&q=80" alt="5G Smartphones" class="w-full h-64 object-cover rounded-2xl mb-6">
+                            <h3 class="text-2xl font-extrabold text-white mb-2">Buy Any New Smartphone & Get:</h3>
+                            <ul class="grid grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-300 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Wireless Neckband / Airpods</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> 9H Gorilla Tempered Glass</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Shockproof Back Case</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Smart Watch / Mini Speaker</li>
+                            </ul>
+                            <button onclick="openWhatsApp('Hi Lakshmi Mobiles Surandai! Naan 5 Free Gifts Offer pathi therinjukanum.')" class="w-full py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm flex items-center justify-center gap-2 transition">
+                                <i class="fa-brands fa-whatsapp text-lg"></i> Claim Offer on WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Mobiles Preview -->
+        <section class="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-between items-end mb-8 gap-4">
+                <div>
+                    <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">Top Selling in Surandai</span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Featured Smartphones</h3>
+                </div>
+                <button onclick="navigateTo('catalog')" class="text-amber-400 hover:text-amber-300 text-sm font-bold flex items-center gap-1.5">
+                    View Full Catalog <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <div id="home-featured-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Populated dynamically via script.js -->
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========================================
+         PAGE 2: MOBILES & ACCESSORIES CATALOG
+    =========================================== -->
+    <main id="page-catalog" class="page-section hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+            <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">Lakshmi Mobiles Inventory</span>
+            <h2 class="text-3xl font-extrabold text-white mt-1">Mobiles & Original Accessories</h2>
+            <p class="text-slate-400 text-sm mt-1">All brand new sealed pack mobiles, A+ grade second-hand phones, and fast chargers.</p>
+        </div>
+
+        <!-- Search & Category Filter Bar -->
+        <div class="flex flex-col md:flex-row gap-4 justify-between items-center bg-slate-900 p-4 rounded-2xl border border-slate-800 mb-8">
+            <div class="flex flex-wrap gap-2 w-full md:w-auto">
+                <button onclick="filterProducts('all')" class="cat-btn active-cat px-4 py-2 rounded-xl text-xs font-bold transition" data-cat="all">All Items</button>
+                <button onclick="filterProducts('5G Mobiles')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 transition" data-cat="5G Mobiles">5G Mobiles</button>
+                <button onclick="filterProducts('Budget Phones')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 transition" data-cat="Budget Phones">Budget Phones</button>
+                <button onclick="filterProducts('Pre-Owned')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 transition" data-cat="Pre-Owned">Second Hand (Used)</button>
+                <button onclick="filterProducts('Accessories')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 transition" data-cat="Accessories">Accessories</button>
+            </div>
+            <div class="relative w-full md:w-72">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-sm"></i>
+                <input type="text" id="search-input" oninput="searchCatalog()" placeholder="Search Vivo, iPhone, Redmi..." class="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white focus:outline-none focus:border-amber-400">
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="catalog-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Rendered by JS -->
+        </div>
+    </main>
+
+    <!-- ==========================================
+         PAGE 3: EXPRESS MOBILE SERVICE CENTER
+    =========================================== -->
+    <main id="page-service" class="page-section hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-10">
+            <!-- Left: Live Repair Status & Pricing -->
+            <div class="space-y-8">
+                <div>
+                    <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">30-Minute Chiplevel Service</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-1">Lakshmi Express Care Center</h2>
+                    <p class="text-slate-400 text-sm mt-2">Original Combo Display replacement, Battery change, Water damage recovery, mariyum Software Unlocking.</p>
+                </div>
+
+                <!-- Live Repair Status Tracker -->
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6">
+                    <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-satellite-dish text-amber-400"></i> Track Your Repair Status (Demo)
+                    </h3>
+                    <p class="text-xs text-slate-400 mb-4">Enter Job Card ID (Try: <code class="text-amber-400 font-bold">LM101</code> or <code class="text-amber-400 font-bold">LM102</code>)</p>
+                    <div class="flex gap-2">
+                        <input type="text" id="repair-ticket-input" placeholder="Enter Ticket ID (e.g. LM101)" class="flex-1 px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white uppercase">
+                        <button onclick="checkRepairStatus()" class="px-6 py-3 rounded-xl bg-amber-400 text-slate-950 font-extrabold text-sm hover:bg-amber-300">Check</button>
+                    </div>
+                    <div id="repair-status-output" class="mt-4 hidden p-4 rounded-xl bg-slate-950 border border-slate-800 text-sm"></div>
+                </div>
+
+                <!-- Common Service Rates -->
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6">
+                    <h4 class="font-bold text-white mb-4">Estimated Service Price List (Surandai)</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between py-2 border-b border-slate-800">
+                            <span class="text-slate-300">Original Quality Display Combo</span>
+                            <span class="font-bold text-amber-400">Starts @ ₹1,199</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-slate-800">
+                            <span class="text-slate-300">High-Backup Battery Replacement (6M Warranty)</span>
+                            <span class="font-bold text-amber-400">Starts @ ₹699</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-slate-800">
+                            <span class="text-slate-300">Charging Pin / CC Board Change</span>
+                            <span class="font-bold text-amber-400">Starts @ ₹299</span>
+                        </div>
+                        <div class="flex justify-between py-2">
+                            <span class="text-slate-300">Broken Touch Glass Only Change (OCA)</span>
+                            <span class="font-bold text-amber-400">Starts @ ₹599</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Service Booking Form -->
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8">
+                <h3 class="text-xl font-extrabold text-white mb-1">Book Instant Repair Slot</h3>
+                <p class="text-xs text-slate-400 mb-6">Book online & get ₹100 OFF + Free Tempered Glass after service!</p>
+                <form onsubmit="submitServiceBooking(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-1">Customer Name</label>
+                        <input type="text" id="srv-name" required placeholder="Ungal Peyar" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-1">Mobile Number</label>
+                        <input type="tel" id="srv-phone" required placeholder="10-Digit Mobile Number" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-1">Mobile Brand & Model</label>
+                        <input type="text" id="srv-model" required placeholder="e.g., Vivo V29 / Redmi Note 12" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-1">Select Issue</label>
+                        <select id="srv-issue" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                            <option value="Broken Display / Touch Change">Broken Display / Touch Change</option>
+                            <option value="Battery Drain / Bulge Replacement">Battery Drain / Bulge Replacement</option>
+                            <option value="Charging Port Not Working">Charging Port Not Working</option>
+                            <option value="Water Damage / Dead Phone IC Work">Water Damage / Dead Phone IC Work</option>
+                            <option value="Software / Pattern Unlock">Software / Pattern Unlock</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 font-extrabold text-sm shadow-lg hover:scale-[1.01] transition">
+                        <i class="fa-brands fa-whatsapp mr-1.5 text-base"></i> Book Repair via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==========================================
+         PAGE 4: EXCHANGE & BAJAJ EMI CALCULATOR
+    =========================================== -->
+    <main id="page-exchange" class="page-section hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-10">
+            <!-- Old Phone Exchange Estimator -->
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8">
+                <span class="text-amber-400 text-xs font-bold uppercase">Instant Valuation</span>
+                <h3 class="text-2xl font-extrabold text-white mt-1 mb-2">Old Phone Exchange Calculator</h3>
+                <p class="text-xs text-slate-400 mb-6">Check how much exchange value your old phone gets at Lakshmi Mobiles Surandai.</p>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-1">Original Purchase Price Range</label>
+                        <select id="ex-base" onchange="calculateExchange()" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                            <option value="8000">Under ₹10,000 (Budget Phone)</option>
+                            <option value="16000" selected>₹12,000 - ₹20,000 (Mid-Range 4G/5G)</option>
+                            <option value="28000">₹20,000 - ₹35,000 (Premium 5G)</option>
+                            <option value="50000">Above ₹40,000 (iPhone / Flagship)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-1">Phone Condition</label>
+                        <select id="ex-cond" onchange="calculateExchange()" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                            <option value="0.55">Flawless (No Scratches, Original Display)</option>
+                            <option value="0.40" selected>Good (Minor Body Scratches, Everything Works)</option>
+                            <option value="0.22">Cracked Glass / Display Issue</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-1">Original Box & Charger Available?</label>
+                        <select id="ex-box" onchange="calculateExchange()" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                            <option value="1200">Yes, Box + Original Charger Available (+₹1,200)</option>
+                            <option value="0">Phone Only (Aadhaar Proof Required)</option>
+                        </select>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-950 border border-amber-500/30 text-center mt-6">
+                        <p class="text-xs text-slate-400">Estimated Spot Exchange Value (including ₹1,000 Exchange Bonus):</p>
+                        <h4 id="ex-result" class="text-3xl font-extrabold text-amber-400 my-2">₹8,600</h4>
+                        <button onclick="openWhatsApp('Hi Lakshmi Mobiles! Naan ennoda pazhaya mobile-ai exchange panni pudhu phone vaanga virumbugiren.')" class="mt-2 px-5 py-2.5 rounded-xl bg-amber-400 text-slate-950 font-bold text-xs">
+                            Lock This Exchange Price on WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bajaj Finserv / IDFC Zero Downpayment EMI Calculator -->
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8">
+                <span class="text-emerald-400 text-xs font-bold uppercase">Aadhaar + PAN Card Podhum!</span>
+                <h3 class="text-2xl font-extrabold text-white mt-1 mb-2">0% EMI Monthly Calculator</h3>
+                <p class="text-xs text-slate-400 mb-6">Bajaj Finserv, TVS Credit, IDFC First Bank & HDB Finance available in our Surandai showroom.</p>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-1">New Mobile Price (₹)</label>
+                        <input type="number" id="emi-price" value="18999" oninput="calculateEMI()" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-1">Downpayment Amount (₹)</label>
+                        <input type="number" id="emi-down" value="2999" oninput="calculateEMI()" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-1">Tenure (Months)</label>
+                        <select id="emi-months" onchange="calculateEMI()" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                            <option value="6">6 Months (0% No-Cost EMI)</option>
+                            <option value="8" selected>8 Months (Bajaj Special Scheme)</option>
+                            <option value="12">12 Months Easy Installments</option>
+                        </select>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-950 border border-emerald-500/30 text-center mt-6">
+                        <p class="text-xs text-slate-400">Your Monthly EMI Installment:</p>
+                        <h4 id="emi-result" class="text-3xl font-extrabold text-emerald-400 my-2">₹2,000 / month</h4>
+                        <p class="text-[11px] text-slate-400">Bring Aadhaar, PAN Card & Bank Passbook to Surandai Showroom for 10-min approval.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==========================================
+         PAGE 5: SHOWROOM LOCATION & CONTACT
+    =========================================== -->
+    <main id="page-contact" class="page-section hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-10">
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-6">
+                <div>
+                    <span class="text-amber-400 text-xs font-bold uppercase">Visit Us in Surandai</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-1">Lakshmi Mobiles Showroom</h2>
+                </div>
+
+                <div class="space-y-4 text-sm">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Showroom Address</h4>
+                            <p class="text-slate-400">Main Road, Opposite to New Bus Stand Entrance, Surandai, Tenkasi District, Tamil Nadu - 627859</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Working Hours</h4>
+                            <p class="text-slate-400">Monday - Sunday: 9:00 AM to 9:30 PM (Open all 7 Days)</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Direct Contact</h4>
+                            <p class="text-slate-400">Sales & EMI Desk: +91 98765 43210<br>Service Support: +91 98765 43211</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Areas Badge -->
+                <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800">
+                    <h5 class="text-xs font-bold text-amber-400 uppercase mb-2">Surrounding Areas We Serve:</h5>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Surandai, Pavoorchatram, Alangulam, Tenkasi, Kadayanallur, Veerakeralampudur, Sundarapandiapuram, Sambavar Vadakarai, Shengottai.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Google Map Embed for Surandai, Tenkasi -->
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden min-h-[380px]">
+                <iframe 
+                    src="https://www.google.com/maps?q=Surandai,Tenkasi,Tamil+Nadu&output=embed" 
+                    class="w-full h-full min-h-[380px] border-0" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==========================================
+         PAGE 6: SHOP OWNER ADMIN PORTAL (DEMO)
+    =========================================== -->
+    <main id="page-admin" class="page-section hidden py-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-slate-900 border border-amber-500/30 rounded-3xl p-6 sm:p-8">
+            <div class="flex flex-wrap justify-between items-center gap-4 pb-6 border-b border-slate-800">
+                <div>
+                    <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold">Owner Dashboard</span>
+                    <h2 class="text-2xl font-extrabold text-white mt-2">Add New Mobile / Offer to Website</h2>
+                    <p class="text-xs text-slate-400">Shop owner indha form-ai fill panna udane Catalog page-la mobile live-ah add aagidum.</p>
+                </div>
+            </div>
+
+            <form onsubmit="addNewProduct(event)" class="grid sm:grid-cols-2 gap-4 mt-6">
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Mobile / Product Name</label>
+                    <input type="text" id="adm-name" required placeholder="e.g., Vivo Y200e 5G (8GB/128GB)" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Category</label>
+                    <select id="adm-cat" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                        <option value="5G Mobiles">5G Mobiles</option>
+                        <option value="Budget Phones">Budget Phones</option>
+                        <option value="Pre-Owned">Pre-Owned (Second Hand)</option>
+                        <option value="Accessories">Accessories</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Lakshmi Offer Price (₹)</label>
+                    <input type="number" id="adm-price" required placeholder="19999" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Key Specs / Free Gift Tag</label>
+                    <input type="text" id="adm-specs" required placeholder="50MP Camera • 44W FlashCharge + 5 Gifts" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Image URL (Optional)</label>
+                    <input type="url" id="adm-img" placeholder="Leave blank for default smartphone image" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                </div>
+                <div class="sm:col-span-2 pt-2">
+                    <button type="submit" class="w-full py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-sm transition">
+                        <i class="fa-solid fa-plus-circle mr-1"></i> Publish Product to Live Catalog
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-10 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+            <p>© 2026 <strong class="text-white">Lakshmi Mobiles</strong>, Surandai, Tenkasi District (TN 76). All Rights Reserved.</p>
+            <div class="flex gap-4">
+                <button onclick="navigateTo('catalog')" class="hover:text-amber-400">5G Mobiles</button>
+                <button onclick="navigateTo('service')" class="hover:text-amber-400">Service Center</button>
+                <button onclick="navigateTo('exchange')" class="hover:text-amber-400">Bajaj EMI</button>
+                <button onclick="navigateTo('contact')" class="hover:text-amber-400">Surandai Map</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Active Navigation Button Styling */
+.nav-btn {
+    color: #cbd5e1;
+}
+.nav-btn:hover {
+    color: #fbbf24;
+    background-color: rgba(30, 41, 59, 0.6);
+}
+.active-nav {
+    background: linear-gradient(135deg, #fbbf24, #f97316);
+    color: #020617 !important;
+    font-weight: 800;
+}
+
+/* Active Category Filter Pill */
+.active-cat {
+    background-color: #fbbf24 !important;
+    color: #020617 !important;
+}
+
+/* Smooth Page Transitions */
+.page-section {
+    animation: fadeInPage 0.35s ease-out;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
