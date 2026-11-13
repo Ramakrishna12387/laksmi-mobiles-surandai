@@ -1,36 +1,39 @@
-body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+/* Enforce Professional Times New Roman Font Everywhere */
+body, h1, h2, h3, h4, h5, h6, p, span, a, button, input, select, textarea, table {
+    font-family: 'Times New Roman', Times, serif !important;
+    letter-spacing: 0.015em;
 }
 
-/* Active Navigation Button Styling */
+/* Navigation Button States */
 .nav-btn {
-    color: #cbd5e1;
+    color: #e2e8f0;
 }
 .nav-btn:hover {
     color: #fbbf24;
-    background-color: rgba(30, 41, 59, 0.6);
+    background-color: rgba(30, 41, 59, 0.7);
 }
 .active-nav {
-    background: linear-gradient(135deg, #fbbf24, #f97316);
+    background: linear-gradient(135deg, #f59e0b, #d97706);
     color: #020617 !important;
-    font-weight: 800;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
 }
 
-/* Active Category Filter Pill */
+/* Category Filter Active State */
 .active-cat {
-    background-color: #fbbf24 !important;
+    background-color: #f59e0b !important;
     color: #020617 !important;
 }
 
 /* Smooth Page Transitions */
 .page-section {
-    animation: fadeInPage 0.35s ease-out;
+    animation: fadeInPage 0.3s ease-in-out;
 }
 
 @keyframes fadeInPage {
     from {
         opacity: 0;
-        transform: translateY(8px);
+        transform: translateY(6px);
     }
     to {
         opacity: 1;
