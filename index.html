@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#0f172a">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Lakshmi Mobiles | Surandai, Tenkasi</title>
+    <title>Lakshmi Mobiles | Surandai, Tenkasi (@lakshmimobilez)</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -16,13 +16,18 @@
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased pb-24 lg:pb-0 selection:bg-amber-500 selection:text-slate-950">
 
-    <!-- Top Compact Location Strip -->
+    <!-- Top Compact Location & Instagram Strip -->
     <div class="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-slate-950 text-[11px] sm:text-xs font-bold py-1.5 px-3 shadow">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <span class="truncate"><i class="fa-solid fa-location-dot mr-1"></i> Near Bus Stand, Surandai, Tenkasi</span>
-            <a href="tel:+919876543210" class="shrink-0 bg-slate-950 text-amber-400 px-2.5 py-0.5 rounded-full font-bold ml-2">
-                <i class="fa-solid fa-phone mr-1"></i> Call Shop
-            </a>
+            <div class="flex items-center gap-1.5 shrink-0 ml-2">
+                <a href="https://www.instagram.com/lakshmimobilez/" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-pink-600 to-purple-700 text-white px-2.5 py-0.5 rounded-full font-bold flex items-center gap-1 shadow">
+                    <i class="fa-brands fa-instagram"></i> @lakshmimobilez
+                </a>
+                <a href="tel:+919876543210" class="bg-slate-950 text-amber-400 px-2.5 py-0.5 rounded-full font-bold">
+                    <i class="fa-solid fa-phone mr-1"></i> Call
+                </a>
+            </div>
         </div>
     </div>
 
@@ -43,12 +48,15 @@
                     </div>
                 </div>
 
-                <!-- Quick WhatsApp Action on Mobile Header -->
-                <div class="flex lg:hidden items-center gap-2">
+                <!-- Quick Instagram & WhatsApp Actions on Mobile Header -->
+                <div class="flex lg:hidden items-center gap-1.5">
+                    <a href="https://www.instagram.com/lakshmimobilez/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-gradient-to-tr from-amber-500 via-pink-600 to-purple-600 text-white text-xs font-bold shadow flex items-center justify-center" title="Follow on Instagram">
+                        <i class="fa-brands fa-instagram text-base"></i>
+                    </a>
                     <button onclick="navigateTo('contact')" class="p-2 rounded-lg bg-slate-800 border border-slate-700 text-amber-400 text-xs font-bold">
-                        <i class="fa-solid fa-map-location-dot mr-1"></i> Map
+                        <i class="fa-solid fa-location-dot"></i>
                     </button>
-                    <button onclick="openWhatsApp('Vanakkam Lakshmi Mobiles Surandai! Today mobile offers sollunga.')" class="px-3 py-2 rounded-lg bg-emerald-600 text-white text-xs font-bold flex items-center gap-1 shadow">
+                    <button onclick="openWhatsApp('Vanakkam Lakshmi Mobiles Surandai! Today mobile offers sollunga.')" class="px-2.5 py-2 rounded-lg bg-emerald-600 text-white text-xs font-bold flex items-center gap-1 shadow">
                         <i class="fa-brands fa-whatsapp text-sm"></i> Chat
                     </button>
                 </div>
@@ -60,7 +68,10 @@
                     <button onclick="navigateTo('service')" class="nav-btn px-4 py-2 rounded-lg text-base font-bold transition" data-page="service">Service Center</button>
                     <button onclick="navigateTo('exchange')" class="nav-btn px-4 py-2 rounded-lg text-base font-bold transition" data-page="exchange">Exchange & EMI</button>
                     <button onclick="navigateTo('contact')" class="nav-btn px-4 py-2 rounded-lg text-base font-bold transition" data-page="contact">Showroom</button>
-                    <button onclick="navigateTo('admin')" class="nav-btn px-4 py-2 rounded-lg text-base font-bold text-amber-400 border border-amber-500/40 bg-amber-500/10 ml-2 transition" data-page="admin">
+                    <a href="https://www.instagram.com/lakshmimobilez/" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg text-base font-bold text-white bg-gradient-to-r from-pink-600 to-purple-600 hover:opacity-90 transition flex items-center gap-1.5 shadow">
+                        <i class="fa-brands fa-instagram"></i> Insta
+                    </a>
+                    <button onclick="navigateTo('admin')" class="nav-btn px-4 py-2 rounded-lg text-base font-bold text-amber-400 border border-amber-500/40 bg-amber-500/10 ml-1 transition" data-page="admin">
                         <i class="fa-solid fa-lock mr-1"></i> Admin
                     </button>
                 </nav>
@@ -72,9 +83,18 @@
          PAGE 1: HOME PAGE (MOBILE OPTIMIZED)
     =========================================== -->
     <main id="page-home" class="page-section">
-        <!-- Mobile Quick Category Circles (Instagram Story / Flipkart Style) -->
+        <!-- Mobile Quick Category Circles (Instagram Story Style) -->
         <section class="bg-slate-900/70 border-b border-slate-800 py-3 px-3 overflow-x-auto no-scrollbar">
             <div class="max-w-7xl mx-auto flex items-center justify-between sm:justify-center gap-4 sm:gap-8 min-w-max">
+                <!-- Official Instagram Story Circle -->
+                <a href="https://www.instagram.com/lakshmimobilez/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-1 group">
+                    <div class="w-14 h-14 rounded-full p-0.5 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 shadow">
+                        <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center text-pink-400 text-xl">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                    <span class="text-xs font-bold text-pink-400">Insta Reels</span>
+                </a>
                 <button onclick="quickCategoryJump('5G Mobiles')" class="flex flex-col items-center gap-1 group">
                     <div class="w-14 h-14 rounded-full bg-slate-800 border-2 border-amber-400 flex items-center justify-center text-amber-400 text-xl shadow">
                         <i class="fa-solid fa-mobile-screen-button"></i>
@@ -109,7 +129,7 @@
         </section>
 
         <!-- Hero Banner -->
-        <section class="py-6 sm:py-12 px-3 sm:px-6 max-w-7xl mx-auto">
+        <section class="py-6 sm:py-10 px-3 sm:px-6 max-w-7xl mx-auto">
             <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-amber-950/30 border border-amber-500/30 rounded-2xl p-4 sm:p-8 shadow-xl">
                 <div class="grid lg:grid-cols-2 gap-6 items-center">
                     <div class="space-y-4">
@@ -154,9 +174,27 @@
                     See All <i class="fa-solid fa-chevron-right text-xs"></i>
                 </button>
             </div>
-            <!-- 2 columns on mobile (grid-cols-2) -->
             <div id="home-featured-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
                 <!-- Populated by script.js -->
+            </div>
+        </section>
+
+        <!-- Official Instagram Community Banner (@lakshmimobilez) -->
+        <section class="py-6 px-3 sm:px-6 max-w-7xl mx-auto">
+            <div class="bg-gradient-to-r from-purple-900/50 via-pink-900/40 to-amber-900/40 border border-pink-500/40 rounded-2xl p-5 sm:p-7 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg">
+                <div class="flex items-center gap-4 text-center sm:text-left flex-col sm:flex-row">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 flex items-center justify-center text-white text-3xl shadow-lg shrink-0">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold uppercase text-pink-400 tracking-wider">Daily Offer Reels & Stock Updates</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mt-0.5">Follow <span class="text-amber-400">@lakshmimobilez</span> on Instagram</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 mt-1">Watch our daily second-hand mobile price drops, 5-gift combo videos & happy customer deliveries in Surandai!</p>
+                    </div>
+                </div>
+                <a href="https://www.instagram.com/lakshmimobilez/" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto shrink-0 px-6 py-3.5 rounded-xl bg-gradient-to-r from-pink-600 via-purple-600 to-amber-500 text-white font-bold text-sm sm:text-base text-center shadow-lg hover:scale-105 transition">
+                    <i class="fa-brands fa-instagram mr-1.5"></i> Open @lakshmimobilez
+                </a>
             </div>
         </section>
     </main>
@@ -347,21 +385,27 @@
     </main>
 
     <!-- ==========================================
-         PAGE 5: SHOWROOM LOCATION & CALL
+         PAGE 5: SHOWROOM LOCATION, CALL & INSTAGRAM
     =========================================== -->
     <main id="page-contact" class="page-section hidden py-6 px-3 sm:px-6 max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-6">
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-8 space-y-4">
-                <h2 class="text-2xl font-bold text-white">Lakshmi Mobiles Showroom</h2>
+                <span class="text-amber-400 text-xs font-bold uppercase">Surandai Showroom</span>
+                <h2 class="text-2xl font-bold text-white">Lakshmi Mobiles</h2>
                 <p class="text-sm text-slate-300">Main Road, Opposite New Bus Stand Entrance, Surandai, Tenkasi District - 627859.</p>
                 <p class="text-sm text-amber-400 font-bold"><i class="fa-solid fa-clock mr-1"></i> Open Daily: 9:00 AM to 9:30 PM</p>
-                <div class="grid grid-cols-2 gap-3 pt-2">
-                    <a href="tel:+919876543210" class="py-3 rounded-xl bg-amber-500 text-slate-950 font-bold text-sm text-center">
-                        <i class="fa-solid fa-phone mr-1"></i> Call Now
+                
+                <!-- Call, WhatsApp & Official Instagram Buttons -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                    <a href="tel:+919876543210" class="py-3 rounded-xl bg-amber-500 text-slate-950 font-bold text-sm text-center flex items-center justify-center gap-1.5 shadow">
+                        <i class="fa-solid fa-phone"></i> Call Shop
                     </a>
-                    <button onclick="openWhatsApp('Vanakkam Lakshmi Mobiles Surandai!')" class="py-3 rounded-xl bg-emerald-600 text-white font-bold text-sm">
-                        <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp
+                    <button onclick="openWhatsApp('Vanakkam Lakshmi Mobiles Surandai!')" class="py-3 rounded-xl bg-emerald-600 text-white font-bold text-sm flex items-center justify-center gap-1.5 shadow">
+                        <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp
                     </button>
+                    <a href="https://www.instagram.com/lakshmimobilez/" target="_blank" rel="noopener noreferrer" class="py-3 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold text-sm text-center flex items-center justify-center gap-1.5 shadow">
+                        <i class="fa-brands fa-instagram text-base"></i> @lakshmimobilez
+                    </a>
                 </div>
             </div>
             <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden h-72 sm:h-96">
@@ -398,7 +442,7 @@
             </form>
         </div>
 
-        <!-- Admin Dashboard (Take Photo from Phone Camera & Upload) -->
+        <!-- Admin Dashboard -->
         <div id="admin-dashboard-box" class="hidden space-y-6">
             <div class="bg-slate-900 border border-amber-500/40 rounded-2xl p-5">
                 <div class="flex justify-between items-center pb-4 border-b border-slate-800">
@@ -463,6 +507,16 @@
             </div>
         </div>
     </main>
+
+    <!-- Desktop Footer with Instagram Link -->
+    <footer class="hidden lg:block bg-slate-900 border-t border-slate-800 py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm text-slate-400">
+            <p>© 2026 <strong class="text-white">Lakshmi Mobiles</strong>, Surandai, Tenkasi District. All Rights Reserved.</p>
+            <a href="https://www.instagram.com/lakshmimobilez/" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:text-pink-300 font-bold flex items-center gap-1.5">
+                <i class="fa-brands fa-instagram text-lg"></i> Follow @lakshmimobilez on Instagram
+            </a>
+        </div>
+    </footer>
 
     <!-- ==========================================
          MOBILE APP BOTTOM NAVIGATION BAR (FIXED)
