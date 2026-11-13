@@ -93,8 +93,10 @@ const repairTickets = {
 
 let activeCategory = "all";
 
-// 1. Mobile & Desktop Page Switcher
-function navigateTo(pageId) {
+// ==========================================
+// 1. MULTI-PAGE ROUTER WITH BACK BUTTON FIX
+// ==========================================
+function navigateTo(pageId, pushToHistory = true) {
     document.querySelectorAll(".page-section").forEach(sec => sec.classList.add("hidden"));
     const target = document.getElementById(`page-${pageId}`);
     if (target) target.classList.remove("hidden");
@@ -110,21 +112,50 @@ function navigateTo(pageId) {
     });
 
     if (pageId === "admin") renderAdminView();
+
+    // Save page state in Browser History so Back button stays inside website
+    if (pushToHistory) {
+        window.history.pushState({ page: pageId }, "", `#${pageId}`);
+    }
+
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
+// Listen to Phone Hardware Back Button & Browser Back Button
+window.addEventListener("popstate", (event) => {
+    if (event.state && event.state.page) {
+        navigateTo(event.state.page, false);
+    } else {
+        const hashPage = window.location.hash.replace("#", "") || "home";
+        navigateTo(hashPage, false);
+    }
+});
+
+// Prevent Accidental Backspace Key from Exiting Website
+window.addEventListener("keydown", (event) => {
+    if (event.key === "Backspace") {
+        const tag = event.target.tagName.toLowerCase();
+        const isInput = tag === "input" || tag === "textarea" || event.target.isContentEditable;
+        if (!isInput) {
+            event.preventDefault();
+        }
+    }
+});
 
 function quickCategoryJump(cat) {
     navigateTo("catalog");
     filterProducts(cat);
 }
 
-// 2. Compact Mobile-Friendly Product Card (2-Per-Row on Phone)
+// ==========================================
+// 2. COMPACT PRODUCT CARD (2-PER-ROW ON PHONE)
+// ==========================================
 function createProductCard(item) {
     const emiPerMonth = Math.round(item.price / 8);
     const fallbackImg = item.fallback || "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80";
 
     return `
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between shadow-md">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between shadow-md hover:border-amber-500/40 transition">
             <div>
                 <div class="relative h-36 sm:h-52 bg-slate-950">
                     <img src="${item.img}" 
@@ -188,7 +219,9 @@ function searchCatalog() {
     renderGrids(document.getElementById("search-input").value);
 }
 
-// 3. Admin Login & Phone Camera Image Compression
+// ==========================================
+// 3. ADMIN LOGIN & PHONE CAMERA PHOTO UPLOAD
+// ==========================================
 function handleAdminLogin(e) {
     e.preventDefault();
     const user = document.getElementById("login-user").value.trim();
@@ -215,7 +248,6 @@ function renderAdminView() {
     if (isAdminLoggedIn) renderAdminTable();
 }
 
-// Compress Phone Camera Image so LocalStorage never gets full
 function previewSelectedPhoto(event) {
     const file = event.target.files[0];
     if (!file) return;
@@ -300,7 +332,9 @@ function renderAdminTable() {
     `).join("");
 }
 
-// 4. Repair Tracker & EMI / Exchange Calculators
+// ==========================================
+// 4. REPAIR TRACKER & EMI / EXCHANGE CALCULATORS
+// ==========================================
 function checkRepairStatus() {
     const code = document.getElementById("repair-ticket-input").value.trim().toUpperCase();
     const box = document.getElementById("repair-status-output");
@@ -349,8 +383,15 @@ function openWhatsApp(message) {
     window.open(`https://wa.me/${SHOP_WHATSAPP}?text=${encodeURIComponent(message)}`, "_blank");
 }
 
+// Initialize App & History State on Load
 document.addEventListener("DOMContentLoaded", () => {
     renderGrids();
     calculateExchange();
     calculateEMI();
+
+    const startPage = window.location.hash.replace("#", "") || "home";
+    window.history.replaceState({ page: startPage }, "", `#${startPage}`);
+    if (startPage !== "home") {
+        navigateTo(startPage, false);
+    }
 });
