@@ -1,36 +1,46 @@
-/* Enforce Professional Times New Roman Font Everywhere */
-body, h1, h2, h3, h4, h5, h6, p, span, a, button, input, select, textarea, table {
+/* Professional Times New Roman Font Everywhere */
+body, h1, h2, h3, h4, h5, h6, p, span, a, button, input, select, textarea {
     font-family: 'Times New Roman', Times, serif !important;
-    letter-spacing: 0.015em;
+    -webkit-tap-highlight-color: transparent;
 }
 
-/* Navigation Button States */
+/* Hide Horizontal Scrollbar on Phone Filter Pills */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Desktop Navigation Active State */
 .nav-btn {
     color: #e2e8f0;
-}
-.nav-btn:hover {
-    color: #fbbf24;
-    background-color: rgba(30, 41, 59, 0.7);
 }
 .active-nav {
     background: linear-gradient(135deg, #f59e0b, #d97706);
     color: #020617 !important;
-    font-weight: 700;
-    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
 }
 
-/* Category Filter Active State */
+/* Mobile Bottom App Bar Active Tab */
+.active-mob-nav {
+    color: #fbbf24 !important;
+    background-color: rgba(245, 158, 11, 0.12);
+}
+
+/* Category Filter Active Pill */
 .active-cat {
     background-color: #f59e0b !important;
     color: #020617 !important;
+    border-color: #f59e0b !important;
 }
 
-/* Smooth Page Transitions */
+/* Smooth App Screen Transition */
 .page-section {
-    animation: fadeInPage 0.3s ease-in-out;
+    animation: appSlideUp 0.22s ease-out;
 }
 
-@keyframes fadeInPage {
+@keyframes appSlideUp {
     from {
         opacity: 0;
         transform: translateY(6px);
